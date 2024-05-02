@@ -1,0 +1,24 @@
+.box {
+  display: block;
+  height: 200px;
+  width: 200px;
+  overflow: auto;
+  margin: 50px;
+  padding: 10px;
+}
+
+.panel {
+  text-align: center;
+}
+
+.light {
+  color: black;
+  background-color: skyblue;
+  border: 5px solid blue;
+}
+
+.dark {
+  color: white;
+  background-color: black;
+  border: 5px solid gray;
+}
