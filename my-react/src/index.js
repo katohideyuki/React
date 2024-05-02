@@ -12,12 +12,18 @@ import './chap2/class.css';
 // import EventBasic from './chap3/EventBasic';
 // import StateBasic from './chap3/StateBasic';
 // import ForList from './chap3/ForList';
-import books from './chap3/books';
+// import books from './chap3/books';
 // import ForNest from './chap3/ForNest';
 // import SelectStyle from './chap3/SelectStyle';
 // import StyledPanel from './chap3/StyledPanel';
-import TitledPanel from './chap3/TitledPanel';
-import ListTemplate from './chap3/ListTemplate';
+// import TitledPanel from './chap3/TitledPanel';
+// import ListTemplate from './chap3/ListTemplate';
+// import MyHelloUsePropTypes from './chap3/MyHelloUsePropTypes';
+// import TypeProp, { Member } from './chap3/TypeProp';
+// import StateBasicV2 from './chap3/StateBasicV2';
+// import StateParent from './chap3/StateParent';
+// import EvenrMouse from './chap3/EvenrMouse';
+import EventCompare from './chap3/EventCompare';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -342,21 +348,122 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
  * chap3-3-3 childrenに対してパラメーターを引き渡す
  * ===========================================================================
  */
+// root.render(
+//   <ListTemplate src={books}>
+//     {/* ListTemplateコンポーネント側で定義されている書籍情報elemを参照する */}
+//     {elem => (
+//       <>
+//         <dt>
+//           <a href={`https://wings.msn.to/books/${elem.isbn}/${elem.isbn}.jpg`}>
+//             {elem.title} ({elem.price}円)
+//           </a>
+//         </dt>
+//         <dd>{elem.summary}</dd>
+//       </>
+//     )}
+//   </ListTemplate>
+// );
+
+/**
+ * ===========================================================================
+ * chap3-3-4 プロパティ型の検証（PropTypes）
+ * JavaScriptは変数/引数に型を持たない。
+ * 型チェックを行うために「TypeScript、Flow、PropTypes」などの言語/ライブライを検討する。
+ * ===========================================================================
+ */
+
+/**
+ * PropTypesの基本
+ */
+// root.render(
+//   // myName属性が指定されていないので、コンソールに警告が出力される
+//   // Warning: Failed prop type: The prop `myName` is marked as required in `MyHelloUsePropTypes`, but its value is `undefined`.
+//   <MyHelloUsePropTypes />
+// );
+
+/**
+ * PropTypesの特殊なデータ型
+ */
+// root.render(
+//   <>
+//     {/* OK */}
+//     <TypeProp prop1={new Member()} />
+//     {/* NG Member型ではなく、String型のため */}
+//     {/* <TypeProp prop1='hoge' /> */}
+
+//     {/* OK */}
+//     <TypeProp prop2="男性" />
+//     {/* NG 列挙値のいずれかではないため*/}
+//     {/* <TypeProp prop2="hoge" /> */}
+
+//     {/* OK */}
+//     <TypeProp prop3='文字列型なので大丈夫' />
+//     {/* NG 指定した型のいずれかではないため */}
+//     {/* <TypeProp prop3={new Member()} /> */}
+
+//     {/* OK */}
+//     <TypeProp prop4={[999, 888]} />
+//     {/* NG 配列内の要素にstring型が含まれているため */}
+//     {/* <TypeProp prop4={[999, '文字列']} /> */}
+
+//     {/* OK */}
+//     <TypeProp prop5={{'key1': 15, 'key2': 20}} />
+//     {/* NG オブジェクトのプロパティにstring型が含まれているため */}
+//     {/* <TypeProp prop5={{'key1': 15, 'key2': '文字列'}} /> */}
+
+//     {/* OK */}
+//     <TypeProp prop6={{name: '鈴木花子', age: 35, sex: '女性', blood: 'A'}} />
+//     {/* NG 必須プロパティであるname属性がないため*/}
+//     {/* <TypeProp prop6={{age: 35, sex: '女性'}} /> */}
+
+//     {/* OK */}
+//     <TypeProp prop7={{name: '鈴木花子', age: 35, sex: '女性'}} />
+//     {/* NG 未定義のプロパティ「blood」が含まれているため */}
+//     {/* <TypeProp prop7={{name: '鈴木花子', age: 35, sex: '女性', blood: 'A'}} /> */}
+//   </>
+// );
+
+/**
+ * ===========================================================================
+ * chap3-3-5 State値更新のための2つの構文
+ * 
+ * ===========================================================================
+ */
+// root.render(
+//   <StateBasicV2 init={0} />
+// );
+
+/**
+ * ===========================================================================
+ * chap3-3-6 子コンポーネントから親コンポーネントへの情報伝達
+ * ===========================================================================
+ */
+// root.render(
+//   <StateParent />
+// );
+
+/**
+ * ===========================================================================
+ * chap3-4-1 Reactで利用できるイベント
+ * ===========================================================================
+ */
+/**
+ * 画像にマウスポインターが出入りしたタイミングで画像を差し替える
+ */
 root.render(
-  <ListTemplate src={books}>
-    {/* ListTemplateコンポーネント側で定義されている書籍情報elemを参照する */}
-    {elem => (
-      <>
-        <dt>
-          <a href={`https://wings.msn.to/books/${elem.isbn}/${elem.isbn}.jpg`}>
-            {elem.title} ({elem.price}円)
-          </a>
-        </dt>
-        <dd>{elem.summary}</dd>
-      </>
-    )}
-  </ListTemplate>
+  // <EvenrMouse
+  //   alt="ロゴ"
+  //   beforeSrc="https://www.web-deli.com/image/linkbanner_l.gif"
+  //   afterSrc="https://www.web-deli.com/image/home_chara.gif" />
+
+    /**
+     * onMouseEnter/onMouseLeaveとonMouseOver/onMouseOutの相違点
+     * onMouseEnter/onMouseLeaveの場合、入れ子の要素には反映されず、外側の要素にのみ反映
+     * onMouseOver/onMouseOutの場合、入れ子の要素にも反映される
+     */
+    <EventCompare />
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
