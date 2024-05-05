@@ -1,0 +1,41 @@
+#parent {
+  height: 300px;
+  width: 300px;
+  margin-left: 50px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+#my {
+  height: 200px;
+  width: 200px;
+  margin-left: 40px;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid red
+}
+
+#child {
+  display: block;
+  height: 100px;
+  width: 100px;
+  margin-left: 40px;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid black
+}
+
+#childNotPropagate {
+  display: block;
+  height: 50px;
+  width: 50px;
+  margin-left: 20px;
+  margin-top: 5px;
+  padding: 5px;
+  border: 1px solid blue;
+  font-size: 0.7em;
+}
+
+#cancel {
+  margin-left: 40px;
+}

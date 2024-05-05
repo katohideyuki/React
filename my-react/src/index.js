@@ -23,7 +23,29 @@ import './chap2/class.css';
 // import StateBasicV2 from './chap3/StateBasicV2';
 // import StateParent from './chap3/StateParent';
 // import EvenrMouse from './chap3/EvenrMouse';
-import EventCompare from './chap3/EventCompare';
+// import EventCompare from './chap3/EventCompare';
+// import EventError from './chap3/EventError';
+// import EventObj from './chap3/EventObj';
+// import EventPoint from './chap3/EventPoint';
+// import EventKey from './chap3/EventKey';
+// import EventArgs from './chap3/EventArgs';
+// import EventArgsV2 from './chap3/EventArgsV2';
+// import EventPropagation from './chap3/EventPropagation';
+// import EventOnce from './chap3/EventOnce';
+// import EventPassive from './chap3/EventPassive';
+// ■ chap4
+import StateForm from './chap4/StateForm';
+import { StateFormUC } from './chap4/StateFormUC';
+import FormTextarea from './chap4/FormTextarea';
+import FormSelect from './chap4/FormSelect';
+import FormList from './chap4/FormList';
+import FormRadio from './chap4/FormRadio';
+import FormCheck from './chap4/FormCheck';
+import FormCheckMulti from './chap4/FormCheckMulti';
+
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -450,20 +472,117 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 /**
  * 画像にマウスポインターが出入りしたタイミングで画像を差し替える
  */
-root.render(
-  // <EvenrMouse
-  //   alt="ロゴ"
-  //   beforeSrc="https://www.web-deli.com/image/linkbanner_l.gif"
-  //   afterSrc="https://www.web-deli.com/image/home_chara.gif" />
+// root.render(
+//   // <EvenrMouse
+//   //   alt="ロゴ"
+//   //   beforeSrc="https://www.web-deli.com/image/linkbanner_l.gif"
+//   //   afterSrc="https://www.web-deli.com/image/home_chara.gif" />
 
-    /**
-     * onMouseEnter/onMouseLeaveとonMouseOver/onMouseOutの相違点
-     * onMouseEnter/onMouseLeaveの場合、入れ子の要素には反映されず、外側の要素にのみ反映
-     * onMouseOver/onMouseOutの場合、入れ子の要素にも反映される
-     */
-    <EventCompare />
-);
+//     /**
+//      * onMouseEnter/onMouseLeaveとonMouseOver/onMouseOutの相違点
+//      * onMouseEnter/onMouseLeaveの場合、入れ子の要素には反映されず、外側の要素にのみ反映
+//      * onMouseOver/onMouseOutの場合、入れ子の要素にも反映される
+//      */
+//     <EventCompare />
+// );
 
+/**
+ * 画像が読み込めない場合にダミー画像を表示する
+ */
+// root.render(
+//   // reactはbuildされると全てのコンポーネントが1つのJSファイルに集約されるため、このパス指定では画像が表示されない
+//   // <EventError src="../public/image/wings.jpg" alt="サンプル画像"/>
+
+//   // これで表示される
+//   // <EventError src="./image/wings.jpg" alt="サンプル画像" />
+
+//   // 明示的に不正なファイルパスを指定し、読み込みエラー用の画像を表示
+//   // <EventError src="./image/_wings.jpg" alt="サンプル画像" />
+// );
+
+
+/**
+ * ===========================================================================
+ * chap3-4-2 イベントオブジェクト
+ * ===========================================================================
+ */
+// root.render(<EventObj />);
+
+/**
+ * イベント発生時のマウス情報を取得
+ */
+// root.render(<EventPoint />);
+
+/**
+ * キーイベントでのキーを識別
+ * 要素内でctrl + qを押下すると、ヘルプメッセージを表示
+ */
+// root.render(<EventKey />);
+
+/**
+ * イベントハンドラーに任意の引数を渡す
+ */
+// root.render(<EventArgs />);
+
+/**
+ * 独自データ属性を利用
+ */
+// root.render(<EventArgsV2 />);
+
+/**
+ * ===========================================================================
+ * chap3-4-3 イベントの伝搬を抑制
+ * ===========================================================================
+ */
+// root.render(<EventPropagation />);
+
+/**
+ * ===========================================================================
+ * chap3-4-4 イベントハンドラーのオプションを設定
+ * ===========================================================================
+ */
+// root.render(<EventOnce />);
+/**
+ * イベントハンドラーを初回のみを実行
+ */
+// root.render(<EventPassive />);
+
+/**
+ * ===========================================================================
+ * chap4-1-1 フォーム管理の基本
+ * ===========================================================================
+ */
+// root.render(<StateForm />);
+
+/**
+ * ===========================================================================
+ * chap4-1-3 非制御コンポーネントによるフォーム管理
+ * ===========================================================================
+ */
+// root.render(<StateFormUC />);
+
+/**
+ * ===========================================================================
+ * chap4-1-4 入力要素に応じたフォーム
+ * ===========================================================================
+ */
+/** テキストエリア */
+// root.render(<FormTextarea />);
+
+/** 選択ボックス */
+// root.render(<FormSelect />);
+
+/** リストボックス */
+// root.render(<FormList />);
+
+/** ラジオボタン */
+// root.render(<FormRadio />);
+
+/** チェックボックス（単一選択） */
+// root.render(<FormCheck />);
+
+/** チェックボックス（複数選択） */
+root.render(<FormCheckMulti />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
