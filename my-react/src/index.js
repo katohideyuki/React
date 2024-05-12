@@ -34,14 +34,53 @@ import './chap2/class.css';
 // import EventOnce from './chap3/EventOnce';
 // import EventPassive from './chap3/EventPassive';
 // ■ chap4
-import StateForm from './chap4/StateForm';
-import { StateFormUC } from './chap4/StateFormUC';
-import FormTextarea from './chap4/FormTextarea';
-import FormSelect from './chap4/FormSelect';
-import FormList from './chap4/FormList';
-import FormRadio from './chap4/FormRadio';
-import FormCheck from './chap4/FormCheck';
-import FormCheckMulti from './chap4/FormCheckMulti';
+// import StateForm from './chap4/StateForm';
+// import { StateFormUC } from './chap4/StateFormUC';
+// import FormTextarea from './chap4/FormTextarea';
+// import FormSelect from './chap4/FormSelect';
+// import FormList from './chap4/FormList';
+// import FormRadio from './chap4/FormRadio';
+// import FormCheck from './chap4/FormCheck';
+// import FormCheckMulti from './chap4/FormCheckMulti';
+// import FormFile from './chap4/FormFile';
+// import StateNest from './chap4/StateNest';
+// import StateNestImmer from './chap4/StateNestImmer';
+// import StateNestImmer2 from './chap4/StateNestImmer2';
+// import StateTodo from './chap4/StateTodo';
+// import FormBasic from './chap4/FormBasic';
+// import FormYup from './chap4/FormYup';
+// import FormJapan from './chap4/FormJapan';
+// ■ chap5
+// import LazyBasic from './chap5/LazyBasic';
+// import LazyMulti from './chap5/LazyMulti';
+// import SuspenseSimple from './chap5/SuspenseSimple';
+// import SuspenseResult from './chap5/SuspenseResult';
+// import ProfilerBasic from './chap5/ProfilerBasic';
+// import StyledComp from './chap5/StyledComp';
+// import { MyButton, MyStyledButton } from './chap5/StyledComp2';
+// import StyledCommon from './chap5/StyledCommon';
+// import StyledGlobal from './chap5/StyledGlobal';
+// import StyledComp from './chap5/StyledComp';
+// import StyledProps from './chap5/StyledProps';
+// import EmotionJsx from './chap5/EmotionJsx';
+// import EmotionComp from './chap5/EmotionComp';
+// import PortalBasic from './chap5/PortalBasic';
+// import ErrorRoot from './chap5/ErrorRoot';
+// import ErrorRetryRoot from './chap5/ErrorRetryRoot';
+// import ErrorRetryRoot2 from './chap5/ErrorRetryRoot2';
+// import ErrorEventRoot from './chap5/ErrorEventRoot';
+// ■ chap6
+// import ErrorEventRoot from './chap5/ErrorEventRoot';
+// import MaterialBasic from './chap6/MaterialBasic';
+// import MaterialDrawer from './chap6/MaterialDrawer';
+// import MaterialGrid from './chap6/MaterialGrid';
+// import { MaterialMode, MaterialMode2 } from './chap6/MaterialMode';
+// import FormMui from './chap6/FormMui';
+// import QueryPre from './chap6/QueryPre';
+import QueryPreRoot from './chap6/QueryPreRoot';
+import QueryBasicRoot from './chap6/QueryBasicRoot';
+import { QueryClient } from '@tanstack/react-query';
+import QuerySuspenseRoot from './chap6/QuerySuspenseRoot';
 
 
 
@@ -582,7 +621,214 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(<FormCheck />);
 
 /** チェックボックス（複数選択） */
-root.render(<FormCheckMulti />);
+// root.render(<FormCheckMulti />);
+
+/** ファイル入力ボックス */
+// root.render(<FormFile />);
+
+
+/**
+ * ===========================================================================
+ * chap4-2-2 Stateにおける構造化データの更新
+ * ===========================================================================
+ */
+// root.render(<StateNest />);
+
+/**
+ * ===========================================================================
+ * chap4-2-2 Stateにおける構造化データの更新
+ * ===========================================================================
+ */
+// root.render(<StateNestImmer />);
+
+/** ハンドラーを共通化する */
+// root.render(<StateNestImmer2 />);
+
+/**
+ * ===========================================================================
+ * chap4-2-3 配列の更新
+ * ===========================================================================
+ */
+// root.render(<StateTodo />);
+
+/**
+ * ===========================================================================
+ * chap4-3-1 ReactHookFormの基本
+ * ===========================================================================
+ */
+// root.render(<FormBasic />);
+
+/**
+ * ===========================================================================
+ * chap4-3-4 検証ライブラリと連携
+ * ===========================================================================
+ */
+// root.render(<FormYup />);
+
+/**
+ * ===========================================================================
+ * chap4-3-7 Yupのエラーメッセージを日本語化
+ * ===========================================================================
+ */
+// root.render(<FormJapan />);
+
+/**
+ * ===========================================================================
+ * chap5-1-1 コンポーネントの描画待ちを検知 - Suspenseコンポーネント
+ * ===========================================================================
+ */
+// root.render(<LazyBasic />);
+
+/* 複数の遅延コンポーネントの場合 */
+// root.render(<LazyMulti />);
+
+/**
+ * ===========================================================================
+ * chap5-1-2 非同期処理の終了を待ち受ける - Suspenseコンポーネント
+ * ===========================================================================
+ */
+// root.render(<SuspenseSimple />);
+
+/* Promiseの結果を表示 */
+// root.render(<SuspenseResult />);
+
+/**
+ * ===========================================================================
+ * chap5-1-3 コンポーネントの描画時間を計測 - Profilerコンポーネント
+ * ===========================================================================
+ */
+// root.render(<ProfilerBasic />);
+
+/**
+ * ===========================================================================
+ * chap5-2-2 標準タグを拡張してスタイル付きタグを定義 - Styled Components
+ * ===========================================================================
+ */
+// root.render(<StyledComp />);
+
+/** 既存のコンポーネントにスタイル付け */
+// root.render(
+//     <>
+//         <MyButton>ボタン</MyButton>
+//         <MyStyledButton>ボタン</MyStyledButton>
+//     </>
+// );
+
+/** スタイル定義を外部化 */
+// root.render(<StyledCommon />);
+
+/** グローバルスタイルを定義 */
+// root.render(
+//     <>
+//         <StyledGlobal />
+//         <StyledComp />
+//     </>
+// );
+
+/** Props経由で動的なスタイルを設定 */
+// root.render(<StyledProps />);
+
+/**
+ * ===========================================================================
+ * chap5-2-3 複数の記法に対応した CSS-in-JS ライブラリ - Emotion
+ * ===========================================================================
+ */
+/** Styled JSX ライクな記法 */
+// root.render(<EmotionJsx />);
+
+/** Styled Components ライクな記法 */
+// root.render(<EmotionComp />);
+
+/** グローバルスタイルを定義 */
+// index.jsを修正する内容だったため、省略
+
+/**
+ * ===========================================================================
+ * chap5-3-1 コンポーネント配下のコンテンツを任意の領域に描画する - ポータル
+ * ===========================================================================
+ */
+// root.render(
+//     <>
+//         <div id='dialog'></div>
+//         <PortalBasic />
+//     </>
+// );
+
+/**
+ * ===========================================================================
+ * chap5-3-2 コンポーネントで発生したエラーを処理する - Error Boundary
+ * ===========================================================================
+ */
+/** Error Boundaryの基本 */
+// root.render(<ErrorRoot />);
+
+/** より詳細なエラーメッセージを生成する */
+// root.render(<ErrorRetryRoot />);
+
+/** 代替えコンテンツをコンポーネントとして切り出す */
+// root.render(<ErrorRetryRoot2 />);
+
+/** イベントハンドラーからの例外を Error Boundary で処理 */
+// root.render(<ErrorEventRoot />);
+
+/**
+ * ===========================================================================
+ * chap6-1-2 MUI の基本
+ * ===========================================================================
+ */
+// root.render(<MaterialBasic />);
+
+/**
+ * ===========================================================================
+ * chap6-1-3 ドロワーメニューを実装
+ * ===========================================================================
+ */
+// root.render(<MaterialDrawer />);
+
+/**
+ * ===========================================================================
+ * chap6-1-4 ページ内の配置を調整するレイアウト機能を活用 - グリッド
+ * ===========================================================================
+ */
+// root.render(<MaterialGrid />);
+
+/**
+ * ===========================================================================
+ * chap6-1-6 ライト/ダークモードに応じてテーマを切り替える
+ * ===========================================================================
+ */
+// root.render(<MaterialMode />);
+
+/** システム環境設定に応じてモードを変更 */
+// root.render(<MaterialMode2 />);
+
+/**
+ * ===========================================================================
+ * chap6-1-7 React Hook Form + MUI を連携
+ * ===========================================================================
+ */
+// root.render(<FormMui />);
+
+/**
+ * ===========================================================================
+ * chap6-3-1 React Query を利用しない
+ * ===========================================================================
+ */
+// root.render(<QueryPreRoot />);
+
+/**
+ * ===========================================================================
+ * chap6-3-2 React Query を利用した例
+ * ===========================================================================
+ */
+// root.render(<QueryBasicRoot />);
+
+/**
+ * ===========================================================================
+ * chap6-3-3 Suspense / Error Boundary との連携
+ * ===========================================================================
+ */
+root.render(<QuerySuspenseRoot />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

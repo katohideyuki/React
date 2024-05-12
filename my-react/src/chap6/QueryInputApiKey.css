@@ -1,0 +1,32 @@
+/* モーダル全体のスタイル */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* モーダルの背景色と透明度 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* モーダルの内容 */
+  .modal-content {
+    background-color: #fff; /* モーダルの背景色 */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* モーダルの影 */
+  }
+  .modal-text {
+    width: 400;
+  }
+  
+  /* クローズボタン */
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
