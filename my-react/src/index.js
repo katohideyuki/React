@@ -77,10 +77,34 @@ import './chap2/class.css';
 // import { MaterialMode, MaterialMode2 } from './chap6/MaterialMode';
 // import FormMui from './chap6/FormMui';
 // import QueryPre from './chap6/QueryPre';
-import QueryPreRoot from './chap6/QueryPreRoot';
-import QueryBasicRoot from './chap6/QueryBasicRoot';
-import { QueryClient } from '@tanstack/react-query';
-import QuerySuspenseRoot from './chap6/QuerySuspenseRoot';
+// import QueryPreRoot from './chap6/QueryPreRoot';
+// import QueryBasicRoot from './chap6/QueryBasicRoot';
+// import { QueryClient } from '@tanstack/react-query';
+// import QuerySuspenseRoot from './chap6/QuerySuspenseRoot';
+// ■ chap7
+// import StateEffect from './chap7/StateEffect';
+// import HookTimer from './chap7/HookTimer';
+// import HookEffect from './chap7/HookEffect';
+// import HookRefNg from './chap7/HookRefNg';
+// import HookRef from './chap7/HookRef';
+// import HookRefForward from './chap7/HookRefForward';
+// import HookRefForward2 from './chap7/HookRefForward2';
+// import HookCallbackRef from './chap7/HookCallbackRef';
+// import HookReducer from './chap7/HookReducer';
+// import HookReducerUp from './chap7/HookReducerUp';
+// import HookContext from './chap7/HookContext';
+// import ThemeContextSample from './chap7/ThemeContextSample';
+// import MyThemeProvider from './chap7/MyThemeProvider';
+// import HookThemeButton from './chap7/HookThemeButton';
+// import { RecoilRoot } from 'recoil';
+// import RecoilCounter from './chap7/RecoilCounter';
+// import RecoilTodo from './chap7/RecoilTodo';
+// import RecoilTodoUp from './chap7/RecoilTodoUp';
+// import HookMemo from './chap7/HookMemo';
+// import HookTransition from './chap7/HookTransition';
+// import HookDeferred from './chap7/HookDeferred';
+// import HookDeferredTransition from './chap7/HookDeferredTransition';
+import HookCustom from './chap7/HookCustom';
 
 
 
@@ -93,6 +117,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //   </React.StrictMode>
 // );
 
+// #region ■■ chap2 Reactの基本 ■■
 // ■ chap2-2-5
 // setInterval(() => {
 //   root.renpnder(
@@ -296,7 +321,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //     '絶賛発売中！'
 //   )
 // );
+// #endregion
 
+// #region ■■ chap3 コンポーネント開発（基本）■■
 /**
  * ===========================================================================
  * chap3-1-2 Propsの基本
@@ -585,7 +612,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
  * イベントハンドラーを初回のみを実行
  */
 // root.render(<EventPassive />);
+// #endregion
 
+// #region ■■ chap4 コンポーネント開発（フォーム）■■
 /**
  * ===========================================================================
  * chap4-1-1 フォーム管理の基本
@@ -671,7 +700,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
  * ===========================================================================
  */
 // root.render(<FormJapan />);
+// #endregion
 
+// #region ■■ chap5 コンポーネント開発（応用）■■
 /**
  * ===========================================================================
  * chap5-1-1 コンポーネントの描画待ちを検知 - Suspenseコンポーネント
@@ -770,7 +801,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 /** イベントハンドラーからの例外を Error Boundary で処理 */
 // root.render(<ErrorEventRoot />);
+// #endregion
 
+// #region ■■ chap6 Reactライブラリの活用 ■■
 /**
  * ===========================================================================
  * chap6-1-2 MUI の基本
@@ -828,8 +861,161 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
  * chap6-3-3 Suspense / Error Boundary との連携
  * ===========================================================================
  */
-root.render(<QuerySuspenseRoot />);
+// root.render(<QuerySuspenseRoot />);
+// #endregion
 
+// #region ■■ chap7 フックの活用 ■■
+/**
+ * ===========================================================================
+ * chap7-1-1 useEffect関数の基本
+ * ===========================================================================
+ */
+// root.render(<StateEffect init={0}/>);
+
+/**
+ * ===========================================================================
+ * chap7-1-3 副作用フックを利用したタイマーの準備
+ * ===========================================================================
+ */
+// root.render(<HookTimer init={5} />);
+
+/**
+ * ===========================================================================
+ * chap7-1-4 描画時に同期的に処理を実行
+ * ===========================================================================
+ */
+// root.render(<HookEffect init={10} />);
+
+/**
+ * ===========================================================================
+ * chap7-2-1 関数コンポーネントで「インスタンス変数」を定義
+ * ===========================================================================
+ */
+// root.render(<HookRefNg />);
+// root.render(<HookRef />);
+
+/**
+ * ===========================================================================
+ * chap7-2-2 Refをコンポーネント配下の要素にフォワード
+ * ===========================================================================
+ */
+// root.render(<HookRefForward />);
+// useImperativeHandle関数を使用した場合
+// root.render(<HookRefForward2 />)
+
+/**
+ * ===========================================================================
+ * chap7-2-4 コールバック関数をref属性に引き渡す - コールバックRef
+ * ===========================================================================
+ */
+// root.render(<HookCallbackRef />)
+
+/**
+ * ===========================================================================
+ * chap7-3-3 useReducerフックの基本
+ * ===========================================================================
+ */
+// root.render(<HookReducer init={0} />)
+
+/**
+ * ===========================================================================
+ * chap7-3-4 Reducerを複数のAction型に対応する
+ * ===========================================================================
+ */
+// root.render(<HookReducerUp init={10} />)
+
+/**
+ * ===========================================================================
+ * chap7-4-1 コンテキストの基本
+ * ===========================================================================
+ */
+// root.render(<HookContext />)
+
+/**
+ * ===========================================================================
+ * chap7-4-2 コンテキストを利用してテーマ切り替えを実装
+ * ===========================================================================
+ */
+// root.render(
+//     <MyThemeProvider>
+//         <HookThemeButton />
+//     </MyThemeProvider>
+// );
+
+/**
+ * ===========================================================================
+ * chap7-5-2 Recoilの基本
+ * ===========================================================================
+ */
+// root.render(
+//     <RecoilRoot>
+//         <RecoilCounter />
+//     </RecoilRoot>
+// );
+
+/**
+ * ===========================================================================
+ * chap7-5-3 TodoリストをRecoilアプリに対応
+ * ===========================================================================
+ */
+// root.render(
+//     <RecoilRoot>
+//         <RecoilTodo />
+//     </RecoilRoot>
+// );
+
+/**
+ * ===========================================================================
+ * chap7-5-4 Todoリストを改良
+ * ===========================================================================
+ */
+// root.render(
+//     <RecoilRoot>
+//         <RecoilTodoUp />
+//     </RecoilRoot>
+// );
+
+/**
+ * ===========================================================================
+ * chap7-6-1 メモ化のためのサンプル
+ * ===========================================================================
+ */
+// root.render(
+//     <HookMemo />
+// );
+
+/**
+ * ===========================================================================
+ * chap7-7-1 複数のStateに応じてページを制御する
+ * ===========================================================================
+ */
+// root.render(
+//     <HookTransition />
+// );
+
+/**
+ * ===========================================================================
+ * chap7-7-4 特定の値の「遅延バージョン」を生成
+ * ===========================================================================
+ */
+// root.render(
+//     // <HookDeferred />
+//     <HookDeferredTransition />
+// );
+
+/**
+ * ===========================================================================
+ * chap7-8-1 フックの自作
+ * ===========================================================================
+ */
+root.render(
+    // <HookDeferred />
+    <HookCustom />
+);
+// #endregion
+
+// #region ■■ chap8 ルーティング ■■
+// #endregion
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
