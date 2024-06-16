@@ -104,10 +104,23 @@ import './chap2/class.css';
 // import HookTransition from './chap7/HookTransition';
 // import HookDeferred from './chap7/HookDeferred';
 // import HookDeferredTransition from './chap7/HookDeferredTransition';
-import HookCustom from './chap7/HookCustom';
-
-
-
+// import HookCustom from './chap7/HookCustom';
+// ■ chap8
+/**
+ * React Routerライブラリのバージョンがv6の場合。
+ * BrowserRouterコンポーネントが廃止され、代わりにRouterコンポーネントが導入されている。
+ * そのため、Routerコンポーネントを使用してルーティングを行うためには、
+ * BrowserRouterとしてエイリアスする必要がある。
+ */
+import { RouterProvider as Router } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+import routesBasic from './chap8/routesBasic';
+import routesLink from './chap8/routesLink';
+import routesLink_v2 from './chap8/routesLink_v2';
+import routesParam from './chap8/routesParam';
+import routesHandle from './chap8/routesHandle';
+import routesMyLink from './chap8/routesMyLink';
+import routesScroll from './chap8/routesScroll';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -1008,14 +1021,78 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
  * chap7-8-1 フックの自作
  * ===========================================================================
  */
-root.render(
-    // <HookDeferred />
-    <HookCustom />
-);
+// root.render(
+//     // <HookDeferred />
+//     <HookCustom />
+// );
 // #endregion
 
 // #region ■■ chap8 ルーティング ■■
+/**
+ * ===========================================================================
+ * chap8-1-1 ルーティングテーブルの定義
+ * ===========================================================================
+ */
+// root.render(<Router router={routesBasic}/>);
+
+/**
+ * ===========================================================================
+ * chap8-2-1 リンク設置の基本
+ * ===========================================================================
+ */
+// root.render(<Router router={routesLink}/>);
+
+/**
+ * ===========================================================================
+ * chap8-2-2 ナビゲーションメニューに特化した<NavLink>要素
+ * ===========================================================================
+ */
+// root.render(<Router router={routesLink_v2}/>);
+
+/**
+ * ===========================================================================
+ * chap8-3-1 ルーター経由で情報を受け渡しする手法
+ * ===========================================================================
+ */
+// root.render(<Router router={routesParam} />);
+
+/**
+ * ===========================================================================
+ * chap8-3-6 ルート固有の情報を取得する - handle属性
+ * ===========================================================================
+ */
+// root.render(
+//     // react-helmet-asyncを有効化
+//     <HelmetProvider>
+//         <Router router={routesParam} />
+//     </HelmetProvider>
+// );
+
+/**
+ * ===========================================================================
+ * chap8-5-1 現在のページへのリンクを解除する
+ * ===========================================================================
+ */
+// root.render(
+//     <HelmetProvider>
+//         <Router router={routesMyLink} />
+//     </HelmetProvider>
+// );
+
+/**
+ * ===========================================================================
+ * chap8-5-2 スクロール位置を復元するsuru - ScrollRestoration要素
+ * ===========================================================================
+ */
+root.render(
+    <Router router={routesScroll} />
+);
+
+
+
 // #endregion
+
+
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
